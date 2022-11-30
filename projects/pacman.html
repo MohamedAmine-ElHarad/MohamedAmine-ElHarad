@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pacman</title>
+
+    <style>
+
+         
+        * {
+            box-sizing: border-box;
+        }
+        h1 {
+            display: grid;
+            justify-content: center;
+            letter-spacing: .5rem;
+            font-size: 4rem;
+            color: #fff;
+            z-index: 999;
+            animation: slideup 8s ease infinite;
+        }
+        @keyframes slideup {
+            0% {
+                transform: translatey(-2000%);
+            }
+            70% {
+                color: green;
+            }
+            75% {
+                color: rgb(238, 255, 0);
+            }
+            80% {
+                color: rgb(255, 200, 0);
+            }
+            85% {
+                color: rgb(255, 157, 0);
+            }
+            90% {
+                color: rgb(255, 128, 0);
+            }
+            95% {
+                color: rgb(255, 98, 0);
+            }
+            100% {
+                transform: translatey(0);
+                color: red;
+            }
+        }
+        body {
+            background-color: #000;
+            background-size: 100vh;
+        }
+        .pacman, .ghost {
+            width: 15rem;
+            height: 15rem;
+            position: absolute;
+            top: 15rem;
+        }
+        .pacman {
+            background: conic-gradient(from 135deg, yellow 75%, rgba(0, 0, 0, 0) 25%);
+            border-radius: 50%;
+            left: 10rem;
+            box-shadow: -21rem 0 0 7rem #000 ;
+            z-index: 99;
+            animation: slideright 8s infinite;
+            animation-timing-function: cubic-bezier(2, 2, 2.2, 2);
+        }
+        @keyframes slideright {
+            0% {
+                transform: translateX(0);
+            }
+            18% {
+                background: conic-gradient(from 135deg, yellow 75%, rgba(0, 0, 0, 0) 25%);
+            }
+            20% {
+                background: conic-gradient(from 90deg, yellow 99.8%, rgba(0, 0, 0, 0) .2%);
+            }
+            33% {
+                background: conic-gradient(from 135deg, yellow 75%, rgba(0, 0, 0, 0) 25%);
+            }
+            35% {
+                background: conic-gradient(from 90deg, yellow 99.8%, rgba(0, 0, 0, 0) .2%);
+            }
+            45% {
+                background: conic-gradient(from 135deg, yellow 75%, rgba(0, 0, 0, 0) 25%);
+            }
+            85% {
+                background: conic-gradient(from 90deg, yellow 99.8%, rgba(0, 0, 0, 0) .2%);
+            }
+            100% {
+                background: conic-gradient(from 90deg, yellow 99.8%, rgba(0, 0, 0, 0) .2%);
+                transform: translateX(230%);
+            }
+        }
+        @keyframes slidedown {
+            0% {
+                transform: translatey(-400%);
+            }
+            75% {
+                transform: translatey(0);
+                transform: translatex(-70%);
+            }
+            100% {
+                /* transform: translatey(0); */
+                transform: translatex(-70%);
+            }
+        }
+        .ghost {
+            animation: slidedown 8s ease infinite;
+            background: #c74e4e ;
+            right: 10rem;
+            border-radius: 50% 50% 0 0;
+        }
+        .ghost::before {
+            content: "";
+            position: absolute;
+            width: 5rem;
+            height: 5rem;
+            background: #000 ;
+            top: 14.2rem;
+            right: -0.7rem;
+            transform: rotate(45deg);
+            box-shadow: -2rem 2rem 0 0 #000, -4rem 4rem 0 0 #000, -6rem 6rem 0 0 #000,
+            -8rem 8rem 0 0 #000  ;
+        }
+        .ground {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #fff ;
+            position: absolute;
+            top: 21rem;
+            left: 30rem;
+            box-shadow: 10rem 0 0 0 #fff, 20rem 0 0 0 #fff, 30rem 0 0 0 #fff;
+        }
+        
+        
+    </style>
+
+</head>
+<body>
+    <h1>GAME OVER</h1>
+    <div class="pacman"></div>
+    <div class="ghost"></div>
+    <div class="ground"></div>
+</body>
+</html>
