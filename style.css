@@ -4,7 +4,6 @@
     margin: 0;
     font-family: sans-serif;
     scroll-behavior: smooth;
-    /* scroll-snap-type: y mandatory; */
 }
 
 header {
@@ -18,6 +17,10 @@ header {
     padding: 2rem 12rem;
     z-index: 999;
 }
+
+/* .menu-dots {
+    display: none;
+} */
 
 .navigation a {
     text-decoration: none;
@@ -40,18 +43,17 @@ header img {
 }
 
 section {
-    padding: 0rem 15rem ;
+    padding: 0rem 15rem 10rem 15rem ;
     min-height: 100vh;
-    /* scroll-snap-align: center; */
 }
 
 .main {
     display: flex;
     align-items: center;
-    background: #bbbbbb url(images/illustration.svg) no-repeat 100%;
+    background: #a7a7a7 url(images/illustration.svg) no-repeat 100%;
     background-position: top 191px right;
     width: 100%;
-    height: 130vh;
+    height: 70rem;
     background-attachment: fixed;
 }
 
@@ -79,25 +81,26 @@ section {
     padding: 1.3rem 3rem;
     margin-top: 1.5rem ;
     margin-bottom: 3.5rem;
-    transition: 0.5s ease;
+    transition: 0.3s ease;
 }
 
 .main-btn:hover {
     transform: scale(1.1);
-    background-color: rgb(225, 70, 93);
+    background-color: #ff0059d7;
     color: black;
 }
-.social-icons a img {
-    margin: 0 2rem 0 1rem;
+.social-icons a i {
+    margin: 0 2rem 0 .5rem;
+    color: rgb(22, 47, 63);
+    font-size: 3rem;
     transition: 0.2s;
-    height: 2.5rem;
 }
-.social-icons a img:hover {
+.social-icons a i:hover {
     transform: scale(1.5);
 }
 
 #Service {
-    background: #aaaaaa;
+    background: #a7a7a7;
 }
 
 .card img {
@@ -121,7 +124,6 @@ section {
 }
 .card:hover h3 {
     color: rgb(0, 217, 255);
-    font-size: 2.2rem;
 }
 
 .content {
@@ -129,6 +131,7 @@ section {
     display: flex;
     gap: 2rem;
     justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
 }
 
@@ -138,6 +141,7 @@ section {
     border-radius: 15%;
     height: 25rem;
     width: 25rem;
+    color: rgb(22, 47, 63);
     background: #d4d4d4;
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.623);
     padding: 2rem;
@@ -173,7 +177,6 @@ section {
     width: 32.9rem;
     background: #a7a7a7;
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.623);
-    /* padding: 2rem; */
     cursor: pointer;
     transition: .2s ease-in;
 }
@@ -204,6 +207,10 @@ section {
 #Contact {
     background: #aaaaaa;
 }
+.contact {
+    display: flex;
+    justify-content: center ;
+}
 .cards {
     display: grid;
     justify-items: center;
@@ -214,14 +221,47 @@ section {
     padding: 2rem;
     transition: .5s ease;
     cursor: pointer;
-    color: white;
-    background: rgb(22, 47, 63);
+    color: wheat;
+    background: linear-gradient(#65a9a2,rgb(22, 47, 63));
 }
 .cards:hover {
     transform: scale(1.1);
+    color: white;
 }
-.cards img {
-    width: 8rem;
+.cards:hover a i {
+    animation: vibration .8s 1 ease;
+}
+@keyframes vibration {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(20deg);
+    }
+    50% {
+        transform: rotate(-20deg);
+    }
+    75% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+.cards a i {
+    font-size: 9rem;
+    color: rgb(22, 47, 63);
+}
+.phone p {
+    font-size: 1.7rem;
+    font-style: italic;
+}
+.cards h3 {
+    font-size: 1.5rem;
+}
+.mail p {
+    font-size: 1.5rem;
+    font-style: italic;
 }
 .content a {
     text-decoration: none;
@@ -231,16 +271,182 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 2rem;
+    padding: 2rem;
     color: wheat;
     background-color: rgb(22, 47, 63);
-    /* scroll-snap-align: center; */
 }
 footer p {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.footer a img {
-    display: inline-block;
-    margin: 0 .5rem;
-    height: 1.7rem;
+.footer a i {
+    color: wheat;
+    margin: 0 1rem;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .navigation a {
+        display: block;
+        font-size: 1.3rem;
+        position: relative;
+        right: -10rem;
+        margin: .25rem 0;
+    }
+    header img {
+        position: relative;
+        left: -9rem;
+    }
+    .main {
+        background-size: 70%;
+        background-position: top 220px right -10px;
+    }
+    .description {
+        margin-left: -13rem;
+        margin-top: -5rem;
+    }
+    .description h2  {
+        font-size: 1.2rem;
+    }
+    .description h2 span {
+        font-size: 3.5rem;
+    }
+    .main-btn {
+        font-size: 1rem;
+        padding: 1.3rem 2rem;
+        margin-top: 1rem ;
+    }
+    .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .card {
+        height: 15rem;
+        width: 15rem;
+        padding: 1rem;
+    }
+    .card img {
+        width: 10rem;
+    }
+    .card h3 {
+        font-size: 1.5rem;
+    }
+    .card p {
+        font-size: 1rem;
+    }
+    .project-card {
+        height: 15rem;
+        width: 17.9rem;
+    }
+    .project-card a img{
+        border-radius: 5% 5% 0 0;
+        width: 18rem;
+        margin-top: -1px;
+    }
+    .project-card a p{
+        font-size: 1rem;
+    }
+    .project-card a h3{
+        font-size: 1.7rem;
+        padding: 1.5rem .5rem;
+    }
+    .title{
+        font-size: 1.7rem;
+        padding: 4rem 0 3rem 0;
+        letter-spacing: 1px;
+    }
+    .cards{
+        height: 15rem;
+        width: 15rem;
+    }
+    .cards a i{
+        font-size: 5rem;
+    }
+    .cards a i{
+        font-size: 5rem;
+    }
+    .cards h3{
+        font-size: 1.2rem;
+    }
+    .cards p{
+        font-size: 1rem;
+    }
+    .mail p{
+        font-size: .9rem;
+        margin-left: -.7rem;
+    }
+    .contact{
+        display: grid;
+    }
+    section {
+        min-height: 60vh;
+    }
+    footer {
+        padding: 1rem ;
+    }
+    .social-icons a i {
+        font-size: 2.5rem ;
+    }
+}
+
+@media screen and (max-width: 610px) {
+    .navigation a {
+        display: block;
+        font-size: .9rem;
+        position: relative;
+        right: -8rem;
+        margin: .25rem 0;
+    }
+    header img {
+        position: relative;
+        left: -9rem;
+    }
+    header {
+        height: 100px;
+    }
+    .main {
+        background-size: 73%;
+        background-position: top 210px right -10px;
+        height: 100vh;
+    }
+    .description {
+        margin-left: -14rem;
+        margin-top: 15rem;
+    }
+    .description h2  {
+        font-size: .8rem;
+        margin-bottom: -1rem;
+    }
+    .description h2 span {
+        font-size: 2rem;
+    }
+    .description h2 span p {
+        font-size: 1rem;
+    }
+    .main-btn {
+        font-size: .6rem;
+        padding: 1rem 2rem;
+        margin: .1rem 0 1rem -.2rem;
+    }
+    .content {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-bottom: -8rem;
+    }
+    .title{
+        padding: 5rem 0 0 0;
+        display: flex;
+        justify-content: center;
+        letter-spacing: .5px;
+        font-size: 1.5rem;
+    }
+    section {
+        min-height: 100vh;
+    }
+    footer {
+        min-width: 72vh;
+    }
+    .social-icons a i {
+        font-size: 1.5rem ;
+        margin: 0 0 0 .5rem ;
+    }
 }
